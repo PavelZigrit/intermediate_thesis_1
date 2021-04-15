@@ -128,8 +128,8 @@ class VkLoader(YaUploader):
 
     def upload_vk_profile_photos_to_ya_disk(self, vk_id=0, count=10, username=None):
         logging.info("Program started")
-        if count > 1000 or count < 0:
-            logging.error("Wrong input (count must be >=0 and <1001)")
+        if count > 1000 or count < 0 or type(count) != int:
+            logging.error("Wrong input (count type must be int and value >=0 and <=1000)")
             return
         if type(vk_id) != int:
             logging.error("Wrong input (vk_id type must be int)")
